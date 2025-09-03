@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import "./Navbar.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <div className="container py-1">
-        <a className="navbar-brand" href="#">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+      <div className="container">
+        <a className="navbar-brand fw-bold" href="#hero">
           🍜 JMC Restaurant
         </a>
         <button
@@ -18,29 +19,28 @@ export default function Navbar() {
         </button>
 
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item mx-2">
               <a className="nav-link" href="#menu">
                 Menu
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mx-2">
               <a className="nav-link" href="#order">
                 Order
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mx-2">
               <a className="nav-link" href="#contact">
                 Contact
               </a>
             </li>
           </ul>
-
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <button className="btn btn-outline-secondary" href="#menu">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item mx-2">
+              <a className="btn btn-outline-warning" href="#book">
                 Book Table
-              </button>
+              </a>
             </li>
           </ul>
         </div>

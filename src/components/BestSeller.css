@@ -10,27 +10,23 @@
   overflow: hidden;
 }
 
-.best-seller-items:hover .btn {
-  opacity: 1 !important;
+/* Blur only the image and body, not the button */
+.best-seller-items:hover img,
+.best-seller-items:hover .card-body {
+  filter: blur(1px) brightness(0.6);
+  transition: all 0.3s ease;
 }
 
+/* Keep button visible and sharp */
+.best-seller-items:hover .btn {
+  opacity: 1 !important;
+  filter: none; /* remove blur from button */
+  transition: all 0.3s ease;
+}
 
+/* Card hover border and shadow */
 .best-seller-items:hover {
   border: 1px solid #0d6efd; /* Bootstrap primary */
   border-radius: 16px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  filter: blur(1px) brightness(0.6);
 }
-
-/* .best-seller-items .details-btn {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.best-seller-items:hover .details-btn {
-  opacity: 1;
-  max-height: 40px;
-  margin-top: 0.5rem;
-} */

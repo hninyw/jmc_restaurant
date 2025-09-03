@@ -39,14 +39,14 @@ const bestSellers = [
   },
   {
     id: 5,
-    name: "tofu-warm",
+    name: "Tofu Warm",
     image: "/images/tofu-warm.jpg",
     rating: 3.5,
     count: 60,
   },
   {
     id: 7,
-    name: "si-htamin",
+    name: "Si Htamin",
     image: "/images/si-htamin.jpg",
     rating: 5,
     count: 50,
@@ -67,99 +67,97 @@ const renderStars = (rating) => {
 };
 
 export default function BestSellerSection() {
-  const [startIndex, setStartIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  const handleNext = () => {
-    if (startIndex + itemsPerPage < bestSellers.length)
-      setStartIndex(startIndex + itemsPerPage);
-  };
-  const handlePrev = () => {
-    if (startIndex - itemsPerPage >= 0)
-      setStartIndex(startIndex - itemsPerPage);
-  };
+  const totalPages = Math.ceil(bestSellers.length / itemsPerPage);
+
   const displayedItems = bestSellers.slice(
-    startIndex,
-    startIndex + itemsPerPage
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
   );
+
+  const handlePageChange = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
 
   return (
     <div className="container bestseller-section my-5">
-      {" "}
-      <h2 className="mb-4">Best Sellers</h2>{" "}
-      <div className="row align-items-center">
-        {" "}
-        {/* Prev button */}{" "}
-        <div className="col-auto">
-          {" "}
-          <button
-            className="btn btn-secondary"
-            onClick={handlePrev}
-            disabled={startIndex === 0}
-          >
-            {" "}
-            ◀{" "}
-          </button>{" "}
-        </div>{" "}
-        {/* Cards */}{" "}
-        <div className="col">
-          {" "}
-          <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
-            {" "}
-            {displayedItems.map((item) => (
-              <div key={item.id} className="col">
-                {" "}
-                <div className="card position-relative best-seller-items h-100">
-                  {" "}
-                  <img
-                    src={item.image}
-                    className="card-img-top"
-                    alt={item.name}
-                    style={{ height: "250px", objectFit: "cover" }}
-                  />{" "}
-                  <div className="card-body p-2 text-center">
-                    {" "}
-                    <p className="card-text fw-semibold mb-0">
-                      {item.name}
-                    </p>{" "}
-                    <div className="d-flex justify-content-center align-items-center gap-1">
-                      {" "}
-                      {renderStars(item.rating)}{" "}
-                      <span
-                        className="text-muted"
-                        style={{ fontSize: "0.9rem" }}
-                      >
-                        {" "}
-                        ({item.count}){" "}
-                      </span>{" "}
-                    </div>{" "}
-                  </div>{" "}
-                  {/* Details button overlay */}{" "}
-                  <button
-                    className="btn btn-primary position-absolute top-50 start-50 translate-middle opacity-0"
-                    style={{ transition: "opacity 0.3s" }}
-                  >
-                    {" "}
-                    Details{" "}
-                  </button>{" "}
-                </div>{" "}
+      <h2 className="mb-4">Best Sellers</h2>
+
+      {/* Cards */}
+      <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+        {displayedItems.map((item) => (
+          <div key={item.id} className="col">
+            <div className="card position-relative best-seller-items h-100">
+              <img
+                src={item.image}
+                className="card-img-top"
+                alt={item.name}
+                style={{ height: "250px", objectFit: "cover" }}
+              />
+              <div className="card-body p-2 text-center">
+                <p className="card-text fw-semibold mb-0">{item.name}</p>
+                <div className="d-flex justify-content-center align-items-center gap-1">
+                  {renderStars(item.rating)}
+                  <span className="text-muted" style={{ fontSize: "0.9rem" }}>
+                    ({item.count})
+                  </span>
+                </div>
               </div>
-            ))}{" "}
-          </div>{" "}
-        </div>{" "}
-        {/* Next button */}{" "}
-        <div className="col-auto">
-          {" "}
-          <button
-            className="btn btn-secondary"
-            onClick={handleNext}
-            disabled={startIndex + itemsPerPage >= bestSellers.length}
+              <button
+                className="btn btn-primary position-absolute top-50 start-50 translate-middle opacity-0"
+                style={{ transition: "opacity 0.3s" }}
+              >
+                Details
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Pagination */}
+      <nav className="mt-4">
+        <ul className="pagination justify-content-center">
+          <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+            <button
+              className="page-link"
+              onClick={() => handlePageChange(currentPage - 1)}
+            >
+              &laquo;
+            </button>
+          </li>
+
+          {[...Array(totalPages)].map((_, i) => (
+            <li
+              key={i}
+              className={`page-item ${currentPage === i + 1 ? "active" : ""}`}
+            >
+              <button
+                className="page-link"
+                onClick={() => handlePageChange(i + 1)}
+              >
+                {i + 1}
+              </button>
+            </li>
+          ))}
+
+          <li
+            className={`page-item ${
+              currentPage === totalPages ? "disabled" : ""
+            }`}
           >
-            {" "}
-            ▶{" "}
-          </button>{" "}
-        </div>{" "}
-      </div>{" "}
+            <button
+              className="page-link"
+              onClick={() => handlePageChange(currentPage + 1)}
+            >
+              &raquo;
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
