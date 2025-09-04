@@ -1,25 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 250);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav
-      className={`navbar navbar-expand-lg fixed-top ${
-        scrolled ? "navbar-dark bg-dark shadow-sm" : "navbar-dark"
-      }`}
-      style={{
-        height: scrolled ? "9vh" : "11vh",
-        transition: "height 0.3s ease",
-      }}
-    >
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
       <div className="container">
         <a className="navbar-brand fw-bold" href="#hero">
           🍜 JMC Restaurant
@@ -27,13 +13,13 @@ export default function Navbar() {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          onClick={() => setIsOpen(!isOpen)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+
+        <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item mx-2">
               <a className="nav-link" href="#menu">
                 Menu
@@ -49,6 +35,8 @@ export default function Navbar() {
                 Contact
               </a>
             </li>
+          </ul>
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item mx-2">
               <a className="btn btn-outline-warning" href="#book">
                 Book Table

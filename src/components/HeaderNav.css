@@ -1,0 +1,27 @@
+/* Top header bar */
+.top-header {
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  transition: all 0.3s ease;
+  z-index: 1030; /* stays above hero */
+}
+
+.navbar .nav-link {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #ffc107; /* Bootstrap warning yellow */
+}
+
+.navbar .btn-outline-warning {
+  border-radius: 20px;
+  font-weight: 600;
+}

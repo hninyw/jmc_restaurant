@@ -9,3 +9,4 @@ pnpm-debug.log*
 
 # Environment variables
 .env
+node_modules

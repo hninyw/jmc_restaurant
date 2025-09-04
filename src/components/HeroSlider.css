@@ -1,0 +1,150 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 99vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  filter: blur(7px) brightness(0.6);
+  background: inherit;
+  /* background: rgba(0, 0, 0, 0.45);  */
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-overlay h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.hero-overlay .btn {
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0);
+}
+
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+
+/* Left arrow animations */
+.fade-in-left {
+  animation: fadeInLeft 0.5s forwards;
+}
+.fade-out-left {
+  animation: fadeOutLeft 0.5s forwards;
+}
+
+/* Right arrow animations */
+.fade-in-right {
+  animation: fadeInRight 0.5s forwards;
+}
+.fade-out-right {
+  animation: fadeOutRight 0.5s forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translate(-30px, -50%); }
+  to { opacity: 1; transform: translate(0, -50%); }
+}
+@keyframes fadeOutLeft {
+  from { opacity: 1; transform: translate(0, -50%); }
+  to { opacity: 0; transform: translate(-30px, -50%); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translate(30px, -50%); }
+  to { opacity: 1; transform: translate(0, -50%); }
+}
+@keyframes fadeOutRight {
+  from { opacity: 1; transform: translate(0, -50%); }
+  to { opacity: 0; transform: translate(30px, -50%); }
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+/* .dot {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+} */
+
+/* .dot.active {
+  background: rgba(0, 0, 0, 0.5);
+  transform: scale(1.2);
+  width: 12px;
+  height: 12px;
+} */
+
+/* Animations */
+.animate-fade {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
