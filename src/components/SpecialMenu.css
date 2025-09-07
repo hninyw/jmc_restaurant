@@ -1,0 +1,114 @@
+/* Section Title */
+.bestseller-section {
+  background: #f0f0f0;
+}
+
+.bestseller-section .title h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: #2c2c2c;
+  margin-bottom: 0;
+}
+
+.bestseller-section .title h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #ffc107;
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* Card Styling */
+.best-seller-items {
+  min-height: 170px;
+  max-height: 200px;
+  overflow: hidden;
+  /* border-radius: 10px; */
+  /* border: 1px solid inherit; */
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .best-seller-items:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+} */
+
+/* Image */
+.img-col img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 10px 0 0 10px; */
+}
+
+/* Text Section */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #8b1e1e; /* Deep red for premium feel */
+  font-family: "Playfair Display", serif;
+}
+
+.card .text-muted {
+  font-size: 0.85rem;
+}
+
+/* Stars */
+.bi-star-fill,
+.bi-star-half,
+.bi-star {
+  font-size: 1rem;
+  margin: 0 1px;
+}
+
+/* Buttons */
+.btn-special {
+  width: 100px;
+  background-color: #c59d5f; /* Golden button */
+  border-color: #c59d5f;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 2px;
+  padding: 6px 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-special:hover {
+  background-color: #ffc107; /* Deep red on hover */
+  border-color: #ffc107;
+  transform: scale(1.05);
+}
+
+/* Pagination */
+.pagination .page-link {
+  color: #8b1e1e;
+  font-weight: 600;
+  border-radius: -50%;
+  /* width: 36px; */
+  /* height: 36px; */
+  text-align: center;
+}
+
+.pagination .active .page-link {
+  background-color: #c59d5f;
+  border-color: #c59d5f;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .best-seller-items {
+    min-height: auto;
+    max-height: none;
+  }
+
+  .img-col img {
+    border-radius: 10px 10px 0 0;
+    height: auto;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+}

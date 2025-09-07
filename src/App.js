@@ -1,20 +1,20 @@
 import logo from "./logo.svg";
 import "./App.css";
 import HeaderNav from "./components/HeaderNav";
-import Navbar from "./components/Navbar";
-import Hero from "./components/HeroSlider";
-import BestSeller from "./components/BestSeller";
-import Menu from "./components/Menu";
+import Reservation from "./components/Reservation";
+import HeroSlider from "./components/HeroSlider";
+import SpecialMenu from "./components/SpecialMenu";
+import About from "./components/About";
 import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="App">
       <HeaderNav />
-      {/* <Navbar /> */}
-      <Hero />
-      <BestSeller />
-      <Menu />
+      <HeroSlider />
+      <About />
+      <SpecialMenu />
+      <Reservation />
       <Footer />
     </div>
   );

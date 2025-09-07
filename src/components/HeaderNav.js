@@ -14,11 +14,11 @@ export default function HeaderNav() {
     <>
       {/* --- Top Header Bar (Hide after scroll) --- */}
       {!scrolled && (
-        <div className="top-header py-2 text-white">
+        <div className="top-header py-2">
           <div className="container d-flex justify-content-between align-items-center">
             <div className="d-flex align-items-center">
               <span>📞 +81 123-456-789</span>
-              <span>✉️ info@jmc-restaurant.com</span>
+              <span class="ms-3">✉️ info@jmc-restaurant.com</span>
             </div>
             <div>
               <span>⏰ Open Hours: Mon-Sun 8:00AM - 9:00PM</span>
@@ -29,8 +29,8 @@ export default function HeaderNav() {
 
       {/* --- Navbar --- */}
       <nav
-        className={`navbar navbar-expand-lg fixed-top ${
-          scrolled ? "navbar-dark bg-dark shadow-sm" : "navbar-dark"
+        className={`navbar navbar-expand-lg ${
+          scrolled ? "fixed-top navbar-dark bg-dark shadow-sm" : "navbar-dark"
         }`}
         style={{
           transition: "all 0.3s ease",
@@ -52,16 +52,24 @@ export default function HeaderNav() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item mx-2">
-                <a className="nav-link" href="#menu">Menu</a>
+                <a className="nav-link" href="#menu">
+                  Menu
+                </a>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link" href="#order">Order</a>
+                <a className="nav-link" href="#order">
+                  Order
+                </a>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link" href="#contact">Contact</a>
+                <a className="nav-link" href="#contact">
+                  Contact
+                </a>
               </li>
               <li className="nav-item mx-2">
-                <a className="btn btn-outline-warning" href="#book">Book Table</a>
+                <a className="btn btn-outline-warning" href="#book">
+                  Book Table
+                </a>
               </li>
             </ul>
           </div>
