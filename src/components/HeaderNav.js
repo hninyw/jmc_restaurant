@@ -30,7 +30,7 @@ export default function HeaderNav() {
       {/* --- Navbar --- */}
       <nav
         className={`navbar navbar-expand-lg ${
-          scrolled ? "fixed-top navbar-dark bg-dark shadow-sm" : "navbar-dark"
+          scrolled ? "fixed-top bg-yellow shadow-sm" : "navbar-dark"
         }`}
         style={{
           transition: "all 0.3s ease",

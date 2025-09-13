@@ -8,7 +8,7 @@ const slides = [
     subtitle: "Coconut Chicken Noodle Soup",
     integrations: "Meat, Potatoes, Rice, Tomatoe",
     desc: "Warm, creamy, and packed with flavor to soothe your soul.",
-    image: "/images/myanmar-mohinga.jpg",
+    image: "/images/kyay-oo.jpg",
     cta: "Enjoy Coconut Soup",
   },
   {
@@ -17,7 +17,7 @@ const slides = [
     subtitle: "Tea Leaf Salad",
     integrations: "Meat, Potatoes, Rice, Tomatoe",
     desc: "A crunchy and zesty delight from Myanmar.",
-    image: "/images/myanmar-mohinga.jpg",
+    image: "/images/Laphet-Thoke.jpg",
     cta: "Order Tea Salad",
   },
   {
@@ -26,16 +26,17 @@ const slides = [
     subtitle: "Shan Noodles",
     integrations: "Meat, Potatoes, Rice, Tomatoe",
     desc: "Authentic Shan State noodles full of tradition.",
-    image: "/images/myanmar-mohinga.jpg",
+    image: "/images/coconut-chicken-noodle-soup.jpg",
     cta: "Taste Shan Noodles",
   },
   {
     id: 4,
     title: "Best Seller",
-    subtitle: "Shan Noodles",
+    subtitle: "Shan Dishes",
     integrations: "Meat, Potatoes, Rice, Tomatoe",
     desc: "Authentic Shan State noodles full of tradition.",
-    image: "/images/tofu-warm.jpg",
+    // desc: "Traditional Shan dishes from Myanmar, known for their fresh herbs, chickpea tofu, fragrant rice, and rich noodle flavors.",
+    image: "/images/Shan-Noodles.jpg",
     cta: "Taste Shan Noodles",
   },
 ];
@@ -74,9 +75,9 @@ export default function HeroSlider() {
             <h1 className="animate-fade">{slides[current].title}</h1>
             <h3 className="animate-fade">{slides[current].subtitle}</h3>
             <p className="animate-fade">{slides[current].desc}</p>
-            <a href="#menu" className="btn btn-warning mt-3 animate-fade">
+            {/* <a href="#menu" className="btn btn-warning mt-3 animate-fade">
               {slides[current].cta}
-            </a>
+            </a> */}
           </div>
           {showArrows && (
             <>

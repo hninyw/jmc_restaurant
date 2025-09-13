@@ -8,12 +8,11 @@
   z-index: 1030;
 }
 
-.navbar {
+.navbar-dark {
   position: fixed;
   top: 40px;
   left: 0;
   width: 100%;
-  /* background: transparent; */
   border-bottom: 1px solid rgba(71, 60, 60, 1) !important;
   z-index: 1030;
   transition: background 0.3s ease, height 0.3s ease;

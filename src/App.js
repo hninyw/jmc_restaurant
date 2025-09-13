@@ -4,6 +4,7 @@ import HeaderNav from "./components/HeaderNav";
 import Reservation from "./components/Reservation";
 import HeroSlider from "./components/HeroSlider";
 import SpecialMenu from "./components/SpecialMenu";
+import ParallaxSection from "./components/ParallaxSection";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
@@ -15,6 +16,7 @@ function App() {
       <About />
       <SpecialMenu />
       <Reservation />
+      {/* <ParallaxSection /> */}
       <Footer />
     </div>
   );

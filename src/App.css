@@ -8,6 +8,14 @@
   color: #f5f5f5; /* light text */
 }
 
+.bg-yellow {
+  background: linear-gradient(135deg, #ffd700, #daa520) !important;
+  /* background: linear-gradient(135deg, #D4AF37, #B8860B); */
+  color: #212529 !important; /* Dark text for contrast */
+  border-bottom: 1px solid rgba(0, 0, 0, 0) !important;
+  box-shadow: #fff 0px 2px 4px -1px;
+}
+
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -133,3 +141,5 @@ footer {
     transform: translate(30px, -50%);
   }
 }
+
+

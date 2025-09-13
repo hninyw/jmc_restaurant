@@ -1,144 +1,74 @@
-/* Hero Section */
-.hero-section {
+.reservation-section {
   position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero-slide {
-  position: relative;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding: 30px;
   color: #fff;
-}
-
-.hero-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  filter: blur(7px) brightness(0.6);
-  background: inherit;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-
-.hero-overlay h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.hero-overlay h3 {
-  font-size: 1.6rem;
-  font-weight: 400;
-  margin-bottom: 15px;
-}
-
-.hero-overlay p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-.hero-overlay .btn {
-  padding: 10px 25px;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* Arrows */
-.arrow {
-  position: absolute;
-  top: 50%;
-  background: rgba(0, 0, 0, 0);
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 8px 12px;
-  cursor: pointer;
-  z-index: 3;
-  border-radius: 50%;
-  transition: background 0.3s ease;
-}
-
-.arrow:hover {
-  background: rgba(0, 0, 0, 0);
-}
-
-.arrow.left {
-  left: 10px;
-}
-.arrow.right {
-  right: 10px;
-}
-
-/* Dots */
-/* .dots {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 3;
-} */
-
-/* .dot {
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-} */
-
-/* .dot.active {
-  background: rgba(0, 0, 0, 0.5);
-  transform: scale(1.2);
-  width: 12px;
-  height: 12px;
-} */
-
-.famous-home {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  height: 30vh;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 15px;
-}
-
-.famous-item img {
-  width: 90px;
-  height: 90px;
-
-  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   object-fit: cover;
-  transition: transform 0.3s, box-shadow 0.3s;
+  object-position: 50% 50%;
+  height: 100vh;
 }
 
-/* Active thumbnail */
-.famous-item img.active {
-  /* transform: scale(1.2); */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.reservation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* max-width: 1100px; */
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+.reservation-form {
+  padding: 5.5rem 1rem;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Left: Reserve Table (Golden) */
+.book-table {
+  background: linear-gradient(135deg, #ffd700, #daa520);
+  color: #222; /* dark text for contrast */
+}
+
+/* Right: Order Online (White) */
+.online-order {
+  background: #fff;
+  color: #222;
+  border: 1px solid #eee;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-form.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reservation-form h2 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.reservation-form h5 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #ffc107;
+}
+
+.reservation-form .form-control {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.reservation-form .btn {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
 }

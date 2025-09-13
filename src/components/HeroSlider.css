@@ -20,7 +20,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  filter: blur(7px) brightness(0.6);
+  /* filter: blur(4px) brightness(0.8); */
   background: inherit;
 }
 

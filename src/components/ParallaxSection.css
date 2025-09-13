@@ -1,0 +1,33 @@
+/* Fixed background image */
+.parallax-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  /* height: 100vh; */
+  width: 100%;
+  position: relative;
+  /* width: 1440px; */
+  height: 766px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  filter: blur(1px) brightness(0.5);
+  /* z-index: -1; */
+}
+
+/* Content sections */
+.content-section {
+  max-height: 100vh; /* each section full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background: transparent;
+  /* background: rgba(255, 255, 255, 0.85); */
+  text-align: center;
+}
+
+.content-section.dark {
+  /* background: rgba(0, 0, 0, 0.3); */
+  color: white;
+}

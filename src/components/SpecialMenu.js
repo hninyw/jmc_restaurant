@@ -75,14 +75,14 @@ export default function SpecialMenu() {
         {/* Cards */}
         <div className="row g-3">
           {bestSellers.map((item) => (
-            <div key={item.id} className="col-12 col-sm-4 col-md-6">
-              <div className="card best-seller-items m-0 h-100 border-0">
+            <div key={item.id} className="col-12 col-sm-4 col-md-6 p-0 m-0">
+              <div className="card best-seller-items m-0 h-100">
                 <div className="row g-0 h-100">
                   <div className="col-md-6 img-col">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="img-fluid rounded-start"
+                      className="img-fluid"
                     />
                   </div>
                   <div className="col-md-6 d-flex flex-column justify-content-left text-center p-3">
@@ -104,11 +104,6 @@ export default function SpecialMenu() {
             </div>
           ))}
         </div>
-        <span className="d-flex justify-content-end pt-3">
-          <a href="#!" className="fw-bold text-decoration-none">
-            More Menu &raquo;
-          </a>
-        </span>
       </div>
     </div>
   );
